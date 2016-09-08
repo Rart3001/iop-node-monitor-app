@@ -6,6 +6,7 @@
 */
 package org.iop.node.monitor.app.rest.services;
 
+import com.bitdubai.fermat_api.layer.all_definition.network_service.enums.NetworkServiceType;
 import com.bitdubai.fermat_p2p_api.layer.all_definition.communication.commons.network_services.database.exceptions.CantReadRecordDataBaseException;
 import com.bitdubai.fermat_p2p_api.layer.all_definition.communication.commons.util.GsonProvider;
 import com.google.gson.JsonObject;
@@ -19,8 +20,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * The Class <code>com.bitdubai.fermat_p2p_plugin.layer.communications.network.node.developer.bitdubai.version_1.structure.rest.AvailableNodes</code>
@@ -88,5 +88,36 @@ public class NetworkData {
 
 
     }
+
+    @GET
+    @Path("/data")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getServerData(){
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("hash", UUID.randomUUID().toString());
+
+
+    }
+
+
+    private Map<NetworkServiceType,Long> getNetworkServicesCount(){
+
+        Map<NetworkServiceType,Long> listNetworkServicesCount = new HashMap<>();
+
+        try {
+
+            List<Object[]> list = JPADaoFactory.getNetworkServiceDao().countOnLineByType();
+
+            for(Object[] values : list)
+                listNetworkServicesCount.put(((NetworkServiceType) values[0]), ((Long) values[1]));
+
+        } catch (Exception e) {
+//            e.printStackTrace();
+        }
+
+        return listNetworkServicesCount;
+    }
+
 
 }
