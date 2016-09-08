@@ -156,15 +156,18 @@ public class NetworkServiceDao extends AbstractBaseDao<NetworkService> {
      * @return Long
      * @throws CantReadRecordDataBaseException
      */
-    public List<NetworkServiceType> getListOfNetworkServiceOfClientSpecific(String publicKeyClient) throws CantReadRecordDataBaseException {
+    public List<NetworkServiceType> getListOfNetworkServiceOfClientSpecific(String publicKeyClient)  throws CantReadRecordDataBaseException{
 
         EntityManager connection = getConnection();
         try {
 
-            TypedQuery<NetworkServiceType> query = connection.createQuery("SELECT ns.networkServiceType FROM NetworkService ns WHERE ns.id = '" + publicKeyClient + "' AND ns.sessionId IS NOT NULL", NetworkServiceType.class);
+            TypedQuery<NetworkServiceType> query = connection.createQuery("SELECT ns.networkServiceType FROM NetworkService ns, Client c " +
+                    " WHERE c.id = '" + publicKeyClient + "' AND  c.sessionId  = ns.sessionId  " +
+                    " AND ns.sessionId IS NOT NULL", NetworkServiceType.class);
             return query.getResultList();
 
         }catch (Exception e){
+//            e.printStackTrace();
             LOG.error(e);
             throw new CantReadRecordDataBaseException(e, "Network Node", "");
         }finally {

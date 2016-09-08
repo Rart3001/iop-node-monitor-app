@@ -4,6 +4,7 @@
  */
 package org.iop.node.monitor.app.database.jpa.daos;
 
+import com.bitdubai.fermat_api.layer.all_definition.network_service.enums.NetworkServiceType;
 import com.bitdubai.fermat_api.layer.osa_android.location_system.Location;
 import com.bitdubai.fermat_p2p_api.layer.all_definition.communication.commons.data.DiscoveryQueryParameters;
 import com.bitdubai.fermat_p2p_api.layer.all_definition.communication.commons.network_services.database.exceptions.CantReadRecordDataBaseException;
@@ -602,6 +603,24 @@ public class NodeCatalogDao extends AbstractBaseDao<NodeCatalog> {
         }
         return nodeCatalog.getVersion();
     }
+
+    public List<NodeCatalog> findAll() throws CantReadRecordDataBaseException {
+
+        EntityManager connection = getConnection();
+        try {
+
+            TypedQuery<NodeCatalog> query = connection.createQuery("SELECT n FROM NodeCatalog n", NodeCatalog.class);
+            return query.getResultList();
+
+        }catch (Exception e){
+//            e.printStackTrace();
+            LOG.error(e);
+            throw new CantReadRecordDataBaseException(e, "Network Node", "");
+        }finally {
+            connection.close();
+        }
+    }
+
 
     /**
      * This method returns the ip to propagate with

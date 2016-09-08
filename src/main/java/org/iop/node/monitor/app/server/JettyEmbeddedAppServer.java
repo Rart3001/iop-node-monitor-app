@@ -169,12 +169,6 @@ public class JettyEmbeddedAppServer {
      */
     public void start() throws Exception {
 
-        this.initialize();
-        LOG.info("Starting the internal server");
-        this.server.start();
-        LOG.info("Server URI = " + this.server.getURI());
-        this.server.join();
-
         Location location = (locationManager != null && locationManager.getLocation() != null) ? locationManager.getLocation() : null;
 
         if(location == null)
@@ -189,6 +183,14 @@ public class JettyEmbeddedAppServer {
             );
 
         NodeContext.add(NodeContextItem.LOCATION, location);
+
+        this.initialize();
+        LOG.info("Starting the internal server");
+        this.server.start();
+        LOG.info("Server URI = " + this.server.getURI());
+        this.server.join();
+
+
 
     }
 

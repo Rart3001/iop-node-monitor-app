@@ -57,12 +57,14 @@ public class NetworkData {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getNodes(){
 
+        LOG.info("Executing getNodes");
+
          /*
           * Get the node catalog list
           */
         try {
 
-            List<NodeCatalog> nodesCatalogs = JPADaoFactory.getNodeCatalogDao().findAll(null,null, 1000, 0);
+            List<NodeCatalog> nodesCatalogs = JPADaoFactory.getNodeCatalogDao().findAll( );
             List<String> nodes = new ArrayList<>();
 
             if(nodesCatalogs != null){
@@ -101,6 +103,8 @@ public class NetworkData {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getServerData(){
 
+        LOG.info("Executing getServerData");
+
         JsonObject jsonObject = new JsonObject();
         Location location = (Location) NodeContext.get(NodeContextItem.LOCATION);
 
@@ -117,6 +121,8 @@ public class NetworkData {
     @Path("/clients")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getClients(){
+
+        LOG.info("Executing getClients");
 
         List<String> listOfClients = new ArrayList<>();
 
@@ -162,7 +168,10 @@ public class NetworkData {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getActors(){
 
+        LOG.info("Executing getActors");
+
         List<String> actors = new ArrayList<>();
+
         try {
 
             List<ActorCatalog> actorCatalogList = JPADaoFactory.getActorCatalogDao().list();
