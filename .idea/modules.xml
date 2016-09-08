@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/iop-node-monitor-app.iml" filepath="$PROJECT_DIR$/.idea/modules/iop-node-monitor-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/iop-node-monitor-app_main.iml" filepath="$PROJECT_DIR$/.idea/modules/iop-node-monitor-app_main.iml" group="iop-node-monitor-app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/iop-node-monitor-app_test.iml" filepath="$PROJECT_DIR$/.idea/modules/iop-node-monitor-app_test.iml" group="iop-node-monitor-app" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="fermat-osa-addon-linux-device-location-bitdubai">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/fermat-osa-addon-linux-device-location-bitdubai.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/fermat-p2p-api-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/objectdb.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

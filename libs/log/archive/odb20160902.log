@@ -1,0 +1,35 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-09-02 18:19:06 #1 type.registry] 
+New type org.iop.node.monitor.app.database.jpa.entities.AbstractBaseEntity
+
+[2016-09-02 18:19:06 #2 type.registry] 
+New type org.iop.node.monitor.app.database.jpa.entities.ActorCatalog
+
+[2016-09-02 18:19:06 #3 type] 
+Type org.iop.node.monitor.app.database.jpa.entities.ActorCatalog is not enhanced.
+
+[2016-09-02 18:19:06 #4 type.registry] 
+New type org.iop.node.monitor.app.database.jpa.entities.NodeCatalog
+
+[2016-09-02 18:19:06 #5 type.registry] 
+New type org.iop.node.monitor.app.database.jpa.entities.GeoLocation
+
+[2016-09-02 18:19:06 #6 type] 
+Type org.iop.node.monitor.app.database.jpa.entities.NodeCatalog is not enhanced.
+
+[2016-09-02 18:19:06 #7 type] 
+Type org.iop.node.monitor.app.database.jpa.entities.GeoLocation is not enhanced.
+
+[2016-09-02 18:19:06 #8 type.registry] 
+New type org.iop.node.monitor.app.database.jpa.entities.Client
+
+[2016-09-02 18:19:06 #9 type] 
+Type org.iop.node.monitor.app.database.jpa.entities.Client is not enhanced.
+
+[2016-09-02 18:19:06 #10 type.registry] 
+New type org.iop.node.monitor.app.database.jpa.entities.NetworkService
+
+[2016-09-02 18:19:06 #11 type] 
+Type org.iop.node.monitor.app.database.jpa.entities.NetworkService is not enhanced.
+

@@ -1,0 +1,105 @@
+apply plugin: 'idea'
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+group 'Iop'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+mainClassName='org.iop.node.monitor.app.AppMain'
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://repository.jboss.org/nexus/content/groups/public-jboss/'
+    }
+    maven {
+        url 'http://repository.jboss.org/maven2'
+    }
+
+    maven {
+        url "file:/${System.properties['user.home']}/artifacts/"
+    }
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
+    }
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
+}
+
+dependencies {
+
+    //compile('com.bitdubai.fermat.p2p:fermat-p2p-api:1.0.0')
+    compile files('libs/fermat-api.jar')
+    compile files('libs/fermat-osa-addon-linux-device-location-bitdubai.jar')
+    compile files('libs/fermat-p2p-api-1.0.0.jar')
+
+    //database
+    compile files('libs/objectdb.jar')
+    compile 'org.eclipse.persistence:javax.persistence:2.1.1'
+    compile 'javax.transaction:javax.transaction-api:1.2'
+    compile 'javax.validation:validation-api:1.1.0.Final'
+    compile 'org.javassist:javassist:3.20.0-GA'
+
+    //jetty
+    compile 'org.eclipse.jetty:jetty-server:9.3.11.v20160721'
+    compile 'org.eclipse.jetty:jetty-servlet:9.3.11.v20160721'
+    compile 'org.eclipse.jetty:jetty-servlets:9.3.11.v20160721'
+    compile 'org.eclipse.jetty:jetty-webapp:9.3.11.v20160721'
+    compile 'org.eclipse.jetty.websocket:websocket-server:9.3.11.v20160721'
+    compile 'org.eclipse.jetty.websocket:websocket-api:9.3.11.v20160721'
+    compile 'org.eclipse.jetty.websocket:javax-websocket-server-impl:9.3.11.v20160721'
+
+    //resteasy
+    compile 'org.jboss.resteasy:resteasy-cdi:3.0.19.Final'
+    compile 'org.jboss.resteasy:resteasy-jaxrs:3.0.19.Final'
+    compile 'org.jboss.resteasy:resteasy-jaxb-provider:3.0.19.Final'
+    compile 'org.jboss.resteasy:resteasy-multipart-provider:3.0.19.Final'
+    compile 'org.jboss.resteasy:resteasy-jackson-provider:3.0.19.Final'
+    compile 'org.jboss.resteasy:async-http-servlet-3.0:3.0.19.Final'
+
+    compile 'commons-codec:commons-codec:1.9'
+    compile 'commons-configuration:commons-configuration:1.10'
+    compile 'io.jsonwebtoken:jjwt:0.6.0'
+    compile 'org.slf4j:slf4j-log4j12:1.7.21'
+    compile 'org.bitlet:weupnp:0.1.4'
+    compile 'com.google.code.gson:gson:2.7'
+
+    compile('org.bitcoinj:bitcoinj-core:0.13.3') {
+        exclude module: 'scrypt'
+    }
+
+}
+
+shadowJar {
+    archiveName = project.name + '-production-' + version  + ".jar"
+    mergeServiceFiles()
+    manifest {
+        attributes 'Built-Date': new Date()
+        attributes 'Built-By': System.getProperty('user.name')
+        attributes 'Build-Jdk': System.getProperty('java.version')
+        attributes 'Implementation-Title': project.name
+        attributes 'Implementation-Version': project.version
+        attributes 'Implementation-Vendor-Id': project.group
+    }
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+}
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}

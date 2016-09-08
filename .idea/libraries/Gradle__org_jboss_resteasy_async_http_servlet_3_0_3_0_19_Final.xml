@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jboss.resteasy:async-http-servlet-3.0:3.0.19.Final">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.resteasy/async-http-servlet-3.0/3.0.19.Final/dc2ed13de7bef8faba0667c477506675e127fc39/async-http-servlet-3.0-3.0.19.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.resteasy/async-http-servlet-3.0/3.0.19.Final/1a8ce3d9fdbeac5710219abcf0eaa74dfb6a9a0/async-http-servlet-3.0-3.0.19.Final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

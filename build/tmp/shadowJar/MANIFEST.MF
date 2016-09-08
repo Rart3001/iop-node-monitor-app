@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: iop-node-monitor-app
+Implementation-Version: 1.0-SNAPSHOT
+Built-Date: Tue Sep 06 12:42:44 VET 2016
+Built-By: rrequena
+Implementation-Vendor-Id: Iop
+Build-Jdk: 1.8.0_101
+Main-Class: org.iop.node.monitor.app.AppMain
+
