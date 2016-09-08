@@ -11,7 +11,6 @@ import io.jsonwebtoken.SignatureException;
 import io.jsonwebtoken.impl.TextCodec;
 import org.apache.commons.lang.ClassUtils;
 import org.apache.log4j.Logger;
-import org.iop.node.monitor.app.util.ConfigurationManager;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -50,14 +49,14 @@ public class AdminRestApiSecurityFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
-        LOG.debug("doFilter");
+        LOG.info("doFilter");
 
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
 
         try {
 
-            LOG.debug("Authorization = " + httpRequest.getHeader("Authorization"));
+            LOG.info("Authorization = " + httpRequest.getHeader("Authorization"));
 
             final String authHeader = httpRequest.getHeader("Authorization");
             if (authHeader == null || !authHeader.contains("Bearer ")) {
@@ -67,14 +66,15 @@ public class AdminRestApiSecurityFilter implements Filter {
             }
 
             String token = authHeader.substring("Bearer ".length(), authHeader.length());
-            LOG.debug("token = " + token);
+            LOG.info("token = " + token);
 
             final Claims claims = Jwts.parser().setSigningKey(TextCodec.BASE64.encode(JWTManager.getKey())).parseClaimsJws(token).getBody();
-            if (claims.getSubject().equals(ConfigurationManager.getValue(ConfigurationManager.USER))){
+            if (claims.getSubject().equals("fermat")){
                 chain.doFilter(request, response);
             }
 
         } catch (final SignatureException e) {
+            e.printStackTrace();
             LOG.error( "Invalid token: "+e.getMessage());
             httpResponse.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Invalid token: "+e.getMessage());
         } catch (final Exception e) {

@@ -66,7 +66,7 @@ public class UserAuth {
     @Produces(MediaType.APPLICATION_JSON)
     public Response login(Credential credential) {
 
-        LOG.debug("Executing login()");
+        LOG.info("Executing login()");
         LoginResponse loginResponse;
 
  //       if (credential.getUser().equals(ConfigurationManager.getValue(ConfigurationManager.USER)) && credential.getPassword().equals(ConfigurationManager.getValue(ConfigurationManager.PASSWORD))){

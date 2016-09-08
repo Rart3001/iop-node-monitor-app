@@ -58,7 +58,7 @@ public class ConfigurationService {
     @GZIP
     public Response getConfiguration() {
 
-        LOG.debug("Executing getConfiguration()");
+        LOG.info("Executing getConfiguration()");
 
         Configuration configuration = new Configuration();
         configuration.setIpk(ConfigurationManager.getValue(ConfigurationManager.IDENTITY_PUBLIC_KEY));
@@ -81,7 +81,7 @@ public class ConfigurationService {
     @GZIP
     public Response saveConfiguration(Configuration configuration) {
 
-        LOG.debug("Executing saveConfiguration()");
+        LOG.info("Executing saveConfiguration()");
 
         try {
 

@@ -1,37 +1,37 @@
-2016-09-06 12:34:40 INFO  AppMain     - ***********************************************************************
-2016-09-06 12:34:40 INFO  AppMain     - * FERMAT - Network Node Monitor Web App - Version 1.0 (2016)          *
-2016-09-06 12:34:40 INFO  AppMain     - * www.fermat.org                                                      *
-2016-09-06 12:34:40 INFO  AppMain     - ***********************************************************************
-2016-09-06 12:34:40 INFO  AppMain     - 
-2016-09-06 12:34:40 INFO  AppMain     - - Starting process ...
-2016-09-06 12:34:41 ERROR AppMain     - ***********************************************************************
-2016-09-06 12:34:41 ERROR AppMain     - * FERMAT - ERROR                                                      *
-2016-09-06 12:34:41 ERROR AppMain     - ***********************************************************************
-2016-09-06 12:35:01 INFO  AppMain     - ***********************************************************************
-2016-09-06 12:35:01 INFO  AppMain     - * FERMAT - Network Node Monitor Web App - Version 1.0 (2016)          *
-2016-09-06 12:35:01 INFO  AppMain     - * www.fermat.org                                                      *
-2016-09-06 12:35:01 INFO  AppMain     - ***********************************************************************
-2016-09-06 12:35:01 INFO  AppMain     - 
-2016-09-06 12:35:01 INFO  AppMain     - - Starting process ...
-2016-09-06 12:35:03 INFO  JettyEmbeddedAppServer     - Initializing the internal Server
-2016-09-06 12:35:03 INFO  org.eclipse.jetty.server.Server     - Logging initialized @2432ms
-2016-09-06 12:35:03 INFO  JettyEmbeddedAppServer     - Server configure ip = 0.0.0.0
-2016-09-06 12:35:03 INFO  JettyEmbeddedAppServer     - Server configure port = 8080
-2016-09-06 12:35:03 INFO  JettyEmbeddedAppServer     - webPath = /home/rrequena/Desarrollo/FermatOrg/iop-node-monitor-app/build/resources/main/web
-2016-09-06 12:35:03 WARN  org.eclipse.jetty.servlet.ServletContextHandler     - ServletContextHandler.setHandler should not be called directly. Use insertHandler or setSessionHandler etc.
-2016-09-06 12:35:03 INFO  JettyEmbeddedAppServer     - Starting the internal server
-2016-09-06 12:35:03 INFO  org.eclipse.jetty.server.Server     - jetty-9.3.11.v20160721
-2016-09-06 12:35:03 INFO  org.eclipse.jetty.webapp.StandardDescriptorProcessor     - NO JSP Support for /iop-node/web, did not find org.eclipse.jetty.jsp.JettyJspServlet
-2016-09-06 12:35:03 INFO  AdminRestApiSecurityFilter     - init
-2016-09-06 12:35:04 INFO  org.jboss.resteasy.resteasy_jaxrs.i18n     - RESTEASY002225: Deploying javax.ws.rs.core.Application: class org.iop.node.monitor.app.rest.JaxRsActivator
-2016-09-06 12:35:04 INFO  org.jboss.resteasy.resteasy_jaxrs.i18n     - RESTEASY002200: Adding class resource org.iop.node.monitor.app.rest.services.UserAuth from Application class org.iop.node.monitor.app.rest.JaxRsActivator
-2016-09-06 12:35:04 INFO  org.jboss.resteasy.resteasy_jaxrs.i18n     - RESTEASY002200: Adding class resource org.iop.node.monitor.app.rest.services.DataBases from Application class org.iop.node.monitor.app.rest.JaxRsActivator
-2016-09-06 12:35:04 INFO  org.jboss.resteasy.resteasy_jaxrs.i18n     - RESTEASY002200: Adding class resource org.iop.node.monitor.app.rest.services.AvailableNodes from Application class org.iop.node.monitor.app.rest.JaxRsActivator
-2016-09-06 12:35:04 INFO  org.jboss.resteasy.resteasy_jaxrs.i18n     - RESTEASY002200: Adding class resource org.iop.node.monitor.app.rest.services.Monitoring from Application class org.iop.node.monitor.app.rest.JaxRsActivator
-2016-09-06 12:35:04 INFO  org.jboss.resteasy.resteasy_jaxrs.i18n     - RESTEASY002200: Adding class resource org.iop.node.monitor.app.rest.services.Actors from Application class org.iop.node.monitor.app.rest.JaxRsActivator
-2016-09-06 12:35:04 INFO  org.jboss.resteasy.resteasy_jaxrs.i18n     - RESTEASY002200: Adding class resource org.iop.node.monitor.app.rest.services.Nodes from Application class org.iop.node.monitor.app.rest.JaxRsActivator
-2016-09-06 12:35:04 INFO  org.jboss.resteasy.resteasy_jaxrs.i18n     - RESTEASY002200: Adding class resource org.iop.node.monitor.app.rest.services.ConfigurationService from Application class org.iop.node.monitor.app.rest.JaxRsActivator
-2016-09-06 12:35:04 INFO  org.eclipse.jetty.server.handler.ContextHandler     - Started o.e.j.w.WebAppContext@654f0d9c{/iop-node/web,file:///home/rrequena/Desarrollo/FermatOrg/iop-node-monitor-app/build/resources/main/web/,AVAILABLE}{/home/rrequena/Desarrollo/FermatOrg/iop-node-monitor-app/build/resources/main/web}
-2016-09-06 12:35:04 INFO  org.eclipse.jetty.server.AbstractConnector     - Started ServerConnector@67a20f67{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
-2016-09-06 12:35:04 INFO  org.eclipse.jetty.server.Server     - Started @3770ms
-2016-09-06 12:35:04 INFO  JettyEmbeddedAppServer     - Server URI = http://0.0.0.0:8080/iop-node/web
+2016-09-08 12:05:32 INFO  AppMain     - ***********************************************************************
+2016-09-08 12:05:32 INFO  AppMain     - * FERMAT - Network Node Monitor Web App - Version 1.0 (2016)          *
+2016-09-08 12:05:32 INFO  AppMain     - * www.fermat.org                                                      *
+2016-09-08 12:05:32 INFO  AppMain     - ***********************************************************************
+2016-09-08 12:05:32 INFO  AppMain     - 
+2016-09-08 12:05:32 INFO  AppMain     - - Starting process ...
+2016-09-08 12:05:32 ERROR AppMain     - ***********************************************************************
+2016-09-08 12:05:32 ERROR AppMain     - * FERMAT - ERROR                                                      *
+2016-09-08 12:05:32 ERROR AppMain     - ***********************************************************************
+2016-09-08 12:06:18 INFO  AppMain     - ***********************************************************************
+2016-09-08 12:06:18 INFO  AppMain     - * FERMAT - Network Node Monitor Web App - Version 1.0 (2016)          *
+2016-09-08 12:06:18 INFO  AppMain     - * www.fermat.org                                                      *
+2016-09-08 12:06:18 INFO  AppMain     - ***********************************************************************
+2016-09-08 12:06:18 INFO  AppMain     - 
+2016-09-08 12:06:18 INFO  AppMain     - - Starting process ...
+2016-09-08 12:06:19 INFO  JettyEmbeddedAppServer     - Initializing the internal Server
+2016-09-08 12:06:19 INFO  org.eclipse.jetty.server.Server     - Logging initialized @1853ms
+2016-09-08 12:06:19 INFO  JettyEmbeddedAppServer     - Server configure ip = 0.0.0.0
+2016-09-08 12:06:19 INFO  JettyEmbeddedAppServer     - Server configure port = 8080
+2016-09-08 12:06:20 INFO  JettyEmbeddedAppServer     - webPath = /home/rrequena/Desarrollo/FermatOrg/iop-node-monitor-app/build/resources/main/web
+2016-09-08 12:06:20 WARN  org.eclipse.jetty.servlet.ServletContextHandler     - ServletContextHandler.setHandler should not be called directly. Use insertHandler or setSessionHandler etc.
+2016-09-08 12:06:20 INFO  JettyEmbeddedAppServer     - Starting the internal server
+2016-09-08 12:06:20 INFO  org.eclipse.jetty.server.Server     - jetty-9.3.11.v20160721
+2016-09-08 12:06:20 INFO  org.eclipse.jetty.webapp.StandardDescriptorProcessor     - NO JSP Support for /iop-node/web, did not find org.eclipse.jetty.jsp.JettyJspServlet
+2016-09-08 12:06:20 INFO  AdminRestApiSecurityFilter     - init
+2016-09-08 12:06:20 INFO  org.jboss.resteasy.resteasy_jaxrs.i18n     - RESTEASY002225: Deploying javax.ws.rs.core.Application: class org.iop.node.monitor.app.rest.JaxRsActivator
+2016-09-08 12:06:20 INFO  org.jboss.resteasy.resteasy_jaxrs.i18n     - RESTEASY002200: Adding class resource org.iop.node.monitor.app.rest.services.UserAuth from Application class org.iop.node.monitor.app.rest.JaxRsActivator
+2016-09-08 12:06:20 INFO  org.jboss.resteasy.resteasy_jaxrs.i18n     - RESTEASY002200: Adding class resource org.iop.node.monitor.app.rest.services.DataBases from Application class org.iop.node.monitor.app.rest.JaxRsActivator
+2016-09-08 12:06:20 INFO  org.jboss.resteasy.resteasy_jaxrs.i18n     - RESTEASY002200: Adding class resource org.iop.node.monitor.app.rest.services.AvailableNodes from Application class org.iop.node.monitor.app.rest.JaxRsActivator
+2016-09-08 12:06:20 INFO  org.jboss.resteasy.resteasy_jaxrs.i18n     - RESTEASY002200: Adding class resource org.iop.node.monitor.app.rest.services.Monitoring from Application class org.iop.node.monitor.app.rest.JaxRsActivator
+2016-09-08 12:06:20 INFO  org.jboss.resteasy.resteasy_jaxrs.i18n     - RESTEASY002200: Adding class resource org.iop.node.monitor.app.rest.services.Actors from Application class org.iop.node.monitor.app.rest.JaxRsActivator
+2016-09-08 12:06:20 INFO  org.jboss.resteasy.resteasy_jaxrs.i18n     - RESTEASY002200: Adding class resource org.iop.node.monitor.app.rest.services.Nodes from Application class org.iop.node.monitor.app.rest.JaxRsActivator
+2016-09-08 12:06:20 INFO  org.jboss.resteasy.resteasy_jaxrs.i18n     - RESTEASY002200: Adding class resource org.iop.node.monitor.app.rest.services.ConfigurationService from Application class org.iop.node.monitor.app.rest.JaxRsActivator
+2016-09-08 12:06:20 INFO  org.eclipse.jetty.server.handler.ContextHandler     - Started o.e.j.w.WebAppContext@63355449{/iop-node/web,file:///home/rrequena/Desarrollo/FermatOrg/iop-node-monitor-app/build/resources/main/web/,AVAILABLE}
+2016-09-08 12:06:20 INFO  org.eclipse.jetty.server.AbstractConnector     - Started ServerConnector@64cd705f{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+2016-09-08 12:06:20 INFO  org.eclipse.jetty.server.Server     - Started @2960ms
+2016-09-08 12:06:20 INFO  JettyEmbeddedAppServer     - Server URI = http://0.0.0.0:8080/iop-node/web
