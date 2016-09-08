@@ -64,7 +64,7 @@ public class Monitoring {
     @GZIP
     public Response monitoringData() {
 
-        LOG.debug("Executing monitoringData()");
+        LOG.info("Executing monitoringData()");
 
         JsonObject globalData = new JsonObject();
 
