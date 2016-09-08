@@ -1,5 +1,13 @@
 package org.iop.node.monitor.app.server;
 
+import com.bitdubai.fermat_api.layer.all_definition.common.system.annotations.NeededAddonReference;
+import com.bitdubai.fermat_api.layer.all_definition.enums.Addons;
+import com.bitdubai.fermat_api.layer.all_definition.enums.Layers;
+import com.bitdubai.fermat_api.layer.all_definition.enums.Platforms;
+import com.bitdubai.fermat_api.layer.all_definition.location_system.NetworkNodeCommunicationDeviceLocation;
+import com.bitdubai.fermat_api.layer.osa_android.location_system.Location;
+import com.bitdubai.fermat_api.layer.osa_android.location_system.LocationManager;
+import com.bitdubai.fermat_api.layer.osa_android.location_system.LocationSource;
 import org.apache.commons.lang.ClassUtils;
 import org.apache.log4j.Logger;
 import org.eclipse.jetty.annotations.ServletContainerInitializersStarter;
@@ -11,6 +19,8 @@ import org.eclipse.jetty.util.log.Log;
 import org.eclipse.jetty.util.log.Slf4jLog;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.eclipse.jetty.websocket.jsr356.server.ServerContainer;
+import org.iop.node.monitor.app.context.NodeContext;
+import org.iop.node.monitor.app.context.NodeContextItem;
 import org.iop.node.monitor.app.rest.JaxRsActivator;
 import org.iop.node.monitor.app.rest.security.AdminRestApiSecurityFilter;
 import org.jboss.resteasy.plugins.server.servlet.HttpServlet30Dispatcher;
@@ -38,6 +48,9 @@ public class JettyEmbeddedAppServer {
      * Represent the logger instance
      */
     private static Logger LOG = Logger.getLogger(ClassUtils.getShortClassName(JettyEmbeddedAppServer.class));
+
+    @NeededAddonReference(platform = Platforms.OPERATIVE_SYSTEM_API, layer = Layers.SYSTEM, addon = Addons.DEVICE_LOCATION)
+    private LocationManager locationManager;
 
     /**
      * Represent the DEFAULT_CONTEXT_PATH value (/iop-node)
@@ -156,11 +169,28 @@ public class JettyEmbeddedAppServer {
      */
     public void start() throws Exception {
 
+        Location location = (locationManager != null && locationManager.getLocation() != null) ? locationManager.getLocation() : null;
+
+        if(location == null)
+            location = new NetworkNodeCommunicationDeviceLocation(
+                    0.0 ,
+                    0.0,
+                    0.0     ,
+                    0        ,
+                    0.0     ,
+                    System.currentTimeMillis(),
+                    LocationSource.UNKNOWN
+            );
+
+        NodeContext.add(NodeContextItem.LOCATION, location);
+
         this.initialize();
         LOG.info("Starting the internal server");
         this.server.start();
         LOG.info("Server URI = " + this.server.getURI());
         this.server.join();
+
+
 
     }
 

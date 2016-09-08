@@ -28,6 +28,7 @@ public class JaxRsActivator extends Application {
         services.add(ConfigurationService.class);
         services.add(DataBases.class);
         services.add(Actors.class);
+        services.add(NetworkData.class);
 
         return services;
     }

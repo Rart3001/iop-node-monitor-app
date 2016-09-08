@@ -4,6 +4,7 @@
  */
 package org.iop.node.monitor.app.database.jpa.daos;
 
+import com.bitdubai.fermat_api.layer.all_definition.network_service.enums.NetworkServiceType;
 import com.bitdubai.fermat_p2p_api.layer.all_definition.communication.commons.network_services.database.exceptions.CantDeleteRecordDataBaseException;
 import com.bitdubai.fermat_p2p_api.layer.all_definition.communication.commons.network_services.database.exceptions.CantReadRecordDataBaseException;
 import org.apache.commons.lang.ClassUtils;
@@ -142,6 +143,31 @@ public class NetworkServiceDao extends AbstractBaseDao<NetworkService> {
             return query.getResultList();
 
         }catch (Exception e){
+            LOG.error(e);
+            throw new CantReadRecordDataBaseException(e, "Network Node", "");
+        }finally {
+            connection.close();
+        }
+    }
+
+    /**
+     * Count all network service online by type
+     *
+     * @return Long
+     * @throws CantReadRecordDataBaseException
+     */
+    public List<NetworkServiceType> getListOfNetworkServiceOfClientSpecific(String publicKeyClient)  throws CantReadRecordDataBaseException{
+
+        EntityManager connection = getConnection();
+        try {
+
+            TypedQuery<NetworkServiceType> query = connection.createQuery("SELECT ns.networkServiceType FROM NetworkService ns, Client c " +
+                    " WHERE c.id = '" + publicKeyClient + "' AND  c.sessionId  = ns.sessionId  " +
+                    " AND ns.sessionId IS NOT NULL", NetworkServiceType.class);
+            return query.getResultList();
+
+        }catch (Exception e){
+//            e.printStackTrace();
             LOG.error(e);
             throw new CantReadRecordDataBaseException(e, "Network Node", "");
         }finally {
